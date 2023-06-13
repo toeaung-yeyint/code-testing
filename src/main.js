@@ -3,4 +3,8 @@ import './style.css'
 import App from './App.vue'
 import router from './router/router.js'
 
-createApp(App).use(router).mount('#app')
+const app = createApp(App);
+app.use(router);
+app.mount('#app');
+
+app.config.globalProperties.$routerBase = '/my-portfolio-draft/';
