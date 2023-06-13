@@ -1,7 +1,7 @@
 <template>
-	<RouterLink to="/my-portfolio-draft/">Home</RouterLink> |
-	<RouterLink to="/my-portfolio-draft/projects">Projects</RouterLink> |
-	<RouterLink to="/my-portfolio-draft/about">About</RouterLink>
+	<RouterLink to="/">Home</RouterLink> |
+	<RouterLink to="/projects">Projects</RouterLink> |
+	<RouterLink to="/about">About</RouterLink>
 	<RouterView />
 </template>
 
