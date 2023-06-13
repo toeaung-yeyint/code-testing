@@ -25,9 +25,7 @@ const routes = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(),
-    mode: 'history',
-    base: '/my-portfolio-draft/',
+    history: createWebHistory(process.env.NODE_ENV),
     routes
 })
 
