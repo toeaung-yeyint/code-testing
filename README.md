@@ -1,1 +1,1 @@
-https://toeaung-yeyint.github.io/my-portfolio-draft/dist/index.html
+https://toeaung-yeyint.github.io/my-portfolio-draft
