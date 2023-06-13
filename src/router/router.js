@@ -6,26 +6,26 @@ import About from "../views/About.vue";
 
 const routes = [
 	{
-		path: "/",
+		path: "/my-portfolio-draft/",
 		component: Home,
 	},
 	{
-		path: "/projects",
+		path: "/my-portfolio-draft/projects",
 		component: Projects,
 	},
 	{
-		path: "/projects/:id",
+		path: "/my-portfolio-draft/projects/:id",
 		component: ProjectDetails,
 		props: true,
 	},
 	{
-		path: "/about",
+		path: "/my-portfolio-draft/about",
 		component: About,
 	},
 ];
 
 const router = createRouter({
-	history: createWebHistory("/my-portfolio-draft/"),
+	history: createWebHistory(),
 	routes,
 });
 
