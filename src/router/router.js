@@ -25,7 +25,7 @@ const routes = [
 ];
 
 const router = createRouter({
-	history: createWebHashHistory(process.env.NODE_ENV),
+	history: createWebHashHistory(),
 	routes,
 });
 
