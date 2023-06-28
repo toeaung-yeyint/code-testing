@@ -1,10 +1,7 @@
-<template>
-  <h1>hello</h1>
-</template>
+<template></template>
 
-<script>
-export default {};
+<script setup>
+import { ref } from "vue";
 </script>
 
-<style>
-</style>
+<style></style>

@@ -1,10 +1,10 @@
 <template>
-  <h1>This is home page.</h1>
+	<h1>This is {{ $t("hello") }} page.</h1>
+	<LanguageSwitcher />
 </template>
 
-<script>
-export default {};
+<script setup>
+import LanguageSwitcher from "../components/LanguageSwitcher.vue";
 </script>
 
-<style>
-</style>
+<style></style>
