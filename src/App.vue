@@ -1,8 +1,8 @@
 <template>
   <br />
-  <RouterLink to="/">Home</RouterLink> |
+  <!-- <RouterLink to="/">Home</RouterLink> |
   <RouterLink to="/projects">Projects</RouterLink> |
-  <RouterLink to="/about">About</RouterLink>
+  <RouterLink to="/about">About</RouterLink> -->
   <RouterView />
 </template>
 
