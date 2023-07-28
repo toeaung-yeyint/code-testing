@@ -1,6 +1,6 @@
 <template>
-  <div class="max-w-screen-lg mx-auto my-16 px-4">
-    <div class="mt-12 mb-16">
+  <div class="max-w-screen-lg mx-auto my-12 px-4">
+    <div class="mt-12 mb-12">
       <h1 class="text-center text-4xl font-bold mb-10">Research themes</h1>
       <p class="text-base">
         Each of our five engineering departments is involved in pioneering
@@ -33,10 +33,13 @@
         <option value="civil">Civil Engineering</option>
         <option value="chemical">Chemical and Biological Engineering</option>
         <option value="mechanical">Mechanical and Aerospace Engineering</option>
+        <option value="ecse">
+          Electrical and Computer Systems Engineering
+        </option>
       </select>
     </form>
-    <div class="grid grid-cols-3 gap-10">
-      <a
+    <div class="grid grid-cols-3">
+      <!-- <a
         href="https://www.google.com/"
         class="flex flex-col shadow-lg group"
         v-for="(theme, index) in filteredThemes"
@@ -54,6 +57,18 @@
         >
           {{ theme.name }}
         </h3>
+      </a> -->
+      <a
+        href="https://www.google.com/"
+        class="flex flex-col justify-center border group"
+        v-for="(theme, index) in filteredThemes"
+        :key="index"
+      >
+        <h3
+          class="text-left p-3 relative text-sky-600 text-md font-bold hover:underline"
+        >
+          {{ theme.name }}
+        </h3>
       </a>
     </div>
   </div>
@@ -65,75 +80,95 @@ import { computed, ref } from "vue";
 const themes = ref([
   {
     name: "Resilience, Infrastructure and Society",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "civil",
   },
   {
     name: "Energy, Water and Resources",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "civil",
   },
   {
     name: "Monitoring, Prediction and Protection",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "civil",
   },
   {
     name: "Biotechnology",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "chemical",
   },
   {
     name: "Food",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "chemical",
   },
   {
     name: "Modelling",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "chemical",
   },
   {
     name: "Nanomaterials",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "chemical",
   },
   {
     name: "Fuels and Energy",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "chemical",
   },
   {
     name: "Membranes",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "chemical",
   },
   {
     name: "Advanced Manufacturing",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "mechanical",
   },
   {
     name: "Micro/Nano Engineering",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "mechanical",
   },
   {
     name: "Robotics and Control",
-    image:
-      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "mechanical",
+  },
+  {
+    name: "Solid Mechanics",
+    department: "mechanical",
+  },
+  {
+    name: "Thermofluids",
+    department: "mechanical",
+  },
+  {
+    name: "Biomedical Engineering (Mechanical)",
+    department: "mechanical",
+  },
+  {
+    name: "Membranes",
+    department: "chemical",
+  },
+  {
+    name: "Wireless Telecommunications",
+    department: "ecse",
+  },
+  {
+    name: "Optical Systems and Networking",
+    department: "ecse",
+  },
+  {
+    name: "Internet of Things",
+    department: "ecse",
+  },
+  {
+    name: "Smart Power Systems",
+    department: "ecse",
+  },
+  {
+    name: "Biomedical Engineering (ECSE)",
+    department: "ecse",
+  },
+  {
+    name: "Electromagnetics and Electronics",
+    department: "ecse",
+  },
+  {
+    name: "Optimization, Information Processing, Control and Decision Systems",
+    department: "ecse",
   },
 ]);
 
