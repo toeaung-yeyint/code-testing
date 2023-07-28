@@ -1,5 +1,14 @@
 <template>
   <div class="max-w-screen-lg mx-auto my-16 px-4">
+    <div class="mt-12 mb-16">
+      <h1 class="text-center text-4xl font-bold mb-10">Research themes</h1>
+      <p class="text-base">
+        Each of our five engineering departments is involved in pioneering
+        research across a variety of different research themes. Explore the
+        listing below to find out more about the ground-breaking work currently
+        under way.
+      </p>
+    </div>
     <form
       @submit.prevent
       @input="$emit('inputProvided', (payload = searchShape))"
@@ -8,7 +17,7 @@
       <input
         class="px-2 py-2 flex-grow focus:outline-none"
         type="text"
-        placeholder="Enter a theme"
+        placeholder="Enter a theme name"
         v-model="searchTheme"
       />
       <i class="fa-solid fa-magnifying-glass text-gray-400 px-2 md:px-4"></i>
@@ -86,6 +95,24 @@ const themes = ref([
   },
   {
     name: "Modelling",
+    image:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
+    department: "chemical",
+  },
+  {
+    name: "Nanomaterials",
+    image:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
+    department: "chemical",
+  },
+  {
+    name: "Fuels and Energy",
+    image:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
+    department: "chemical",
+  },
+  {
+    name: "Membranes",
     image:
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEWAgICQdD0xAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=",
     department: "chemical",
