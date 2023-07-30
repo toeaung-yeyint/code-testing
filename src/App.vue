@@ -46,7 +46,7 @@
 				</option>
 			</select>
 		</form>
-		<div class="grid grid-cols-3 gap-5">
+		<div class="grid grid-cols-3 gap-10">
 			<a
 				href="https://www.google.com/"
 				class="flex flex-col shadow-lg group"
