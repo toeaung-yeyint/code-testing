@@ -41,6 +41,9 @@
 					Materials Science and Engineering
 				</option>
 				<option value="mechanical">Mechanical and Aerospace Engineering</option>
+				<option value="Interdisciplinary research">
+					Interdisciplinary research
+				</option>
 			</select>
 		</form>
 		<div class="grid grid-cols-3 gap-10">
@@ -201,6 +204,14 @@ const themes = ref([
 	{
 		name: "Materials Theory, Modelling and Characterisation",
 		department: "Materials Science and Engineering",
+	},
+	{
+		name: "Robotic & AI",
+		department: "Interdisciplinary research",
+	},
+	{
+		name: "Defence",
+		department: "Interdisciplinary research",
 	},
 ]);
 
