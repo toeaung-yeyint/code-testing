@@ -47,7 +47,7 @@
 			</select>
 		</form>
 		<div class="grid grid-cols-3 gap-5">
-			<!-- <a
+			<a
 				href="https://www.google.com/"
 				class="flex flex-col shadow-lg group"
 				v-for="(theme, index) in filteredThemes"
@@ -68,20 +68,8 @@
 					>
 					{{ theme.name }}
 				</h3>
-			</a> -->
+			</a>
 			<!-- <a
-        href="https://www.google.com/"
-        class="flex flex-col justify-center border group"
-        v-for="(theme, index) in filteredThemes"
-        :key="index"
-      >
-        <h3
-          class="text-left p-3 relative text-sky-600 text-md font-bold hover:underline"
-        >
-          {{ theme.name }}
-        </h3>
-      </a> -->
-			<a
 				href="https://www.google.com/"
 				class="flex flex-col border group relative"
 				v-for="(theme, index) in filteredThemes"
@@ -95,7 +83,7 @@
 					>
 					{{ theme.name }}
 				</h3>
-			</a>
+			</a> -->
 		</div>
 	</div>
 </template>
