@@ -1,7 +1,9 @@
 <template>
   <div class="max-w-screen-lg mx-auto my-12 px-4">
     <div class="mt-12 mb-12">
-      <h1 class="text-center text-4xl font-bold mb-10">Research themes</h1>
+      <h1 class="text-center text-4xl font-bold mb-10">
+        Research themes (work in progress)
+      </h1>
       <p class="text-base">
         Each of our five engineering departments is involved in pioneering
         research across a variety of different research themes. Explore the
@@ -50,7 +52,18 @@
         </option>
       </select>
     </form>
-    <div class="grid grid-cols-3 gap-10">
+    <div class="flex items-center justify-center mb-8">
+      <i
+        @click="goToPage(currentPage - 1)"
+        class="fa-solid fa-angles-left cursor-pointer text-gray-300 hover:text-gray-800"
+      ></i>
+      <span class="border-2 mx-2 px-2">{{ currentPage }}</span>
+      <i
+        @click="goToPage(currentPage + 1)"
+        class="fa-solid fa-angles-right cursor-pointer text-gray-300 hover:text-gray-800"
+      ></i>
+    </div>
+    <div class="grid grid-cols-3 gap-10 max-h-[550px]">
       <a
         href="https://www.google.com/"
         class="flex flex-col shadow-lg group"
@@ -71,21 +84,6 @@
           {{ theme.name }}
         </h3>
       </a>
-      <!-- <a
-				href="https://www.google.com/"
-				class="flex flex-col border group relative"
-				v-for="(theme, index) in filteredThemes"
-				:key="index"
-			>
-				<h3
-					class="text-left p-3 text-sky-600 text-md font-bold after:content-[''] after:w-full after:h-1 after:bg-gradient-to-r after:from-transparent after:via-[#007aff] after:to-transparent after:absolute after:bottom-0 after:left-0 after:opacity-0 group-hover:after:opacity-100 after:transition-opacity after:duration-500"
-				>
-					<span class="text-sky-400 block text-xs"
-						>Department of {{ theme.department }}</span
-					>
-					{{ theme.name }}
-				</h3>
-			</a> -->
     </div>
   </div>
 </template>
@@ -225,7 +223,7 @@ const searchTheme = ref("");
 const department = ref("");
 
 const filteredThemes = computed(() => {
-  return themes.value
+  let query = themes.value
     .filter(
       (theme) =>
         theme.name
@@ -234,7 +232,22 @@ const filteredThemes = computed(() => {
         theme.department.toLowerCase().includes(department.value.toLowerCase())
     )
     .sort((a, b) => a.name.localeCompare(b.name));
+  const startIndex = (currentPage.value - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  return query.slice(startIndex, endIndex);
 });
+
+const itemsPerPage = 6;
+const currentPage = ref(1);
+
+// Function to handle pagination
+const goToPage = (page) => {
+  const totalPages = Math.ceil(themes.value.length / itemsPerPage);
+  console.log(totalPages);
+  if (page >= 1 && page <= totalPages) {
+    currentPage.value = page;
+  }
+};
 </script>
 
 <style></style>
