@@ -31,7 +31,7 @@
       <select
         v-model="department"
         id="department"
-        class="ml-4 border-2 focus:outline-none focus:border-sky-500 font-['Roboto']"
+        class="p-1 ml-4 border-2 focus:outline-none focus:border-sky-500 font-['Roboto']"
       >
         <option value="">All Departments</option>
         <option value="Chemical Engineering">
@@ -63,7 +63,7 @@
         class="fa-solid fa-angles-right cursor-pointer text-gray-300 hover:text-gray-800"
       ></i>
     </div>
-    <div class="grid grid-cols-3 gap-10 max-h-[550px]">
+    <div class="grid grid-cols-3 gap-10">
       <a
         href="https://www.google.com/"
         class="flex flex-col shadow-lg group"
@@ -242,7 +242,10 @@ const currentPage = ref(1);
 
 // Function to handle pagination
 const goToPage = (page) => {
-  const totalPages = Math.ceil(themes.value.length / itemsPerPage);
+  let totalPages;
+  department.value !== ""
+    ? (totalPages = Math.ceil(filteredThemes.value.length / itemsPerPage))
+    : (totalPages = Math.ceil(themes.value.length / itemsPerPage));
   console.log(totalPages);
   if (page >= 1 && page <= totalPages) {
     currentPage.value = page;
