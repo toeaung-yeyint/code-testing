@@ -52,17 +52,6 @@
         </option>
       </select>
     </form>
-    <div class="flex items-center justify-center mb-8">
-      <i
-        @click="goToPage(currentPage - 1)"
-        class="fa-solid fa-angles-left cursor-pointer text-gray-300 hover:text-gray-800"
-      ></i>
-      <span class="border-2 mx-2 px-2">{{ currentPage }}</span>
-      <i
-        @click="goToPage(currentPage + 1)"
-        class="fa-solid fa-angles-right cursor-pointer text-gray-300 hover:text-gray-800"
-      ></i>
-    </div>
     <div class="grid grid-cols-3 gap-10">
       <a
         href="https://www.google.com/"
@@ -72,7 +61,7 @@
       >
         <div class="overflow-hidden">
           <img
-            src="https://pixabay.com/get/g7ed2229a4e6f73ea52f29d5d0db28b97607897176929e15b3a5820fda2867bee81cfdbed825db10c923ad0c79e55eb3d_1280.jpg"
+            src="https://images.unsplash.com/photo-1690484814049-2ab2002b0dea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80"
             alt=""
             class="h-48 group-hover:scale-110 transition-scale duration-500 object-cover w-full"
           />
@@ -223,7 +212,7 @@ const searchTheme = ref("");
 const department = ref("");
 
 const filteredThemes = computed(() => {
-  let query = themes.value
+  return themes.value
     .filter(
       (theme) =>
         theme.name
@@ -232,25 +221,7 @@ const filteredThemes = computed(() => {
         theme.department.toLowerCase().includes(department.value.toLowerCase())
     )
     .sort((a, b) => a.name.localeCompare(b.name));
-  const startIndex = (currentPage.value - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  return query.slice(startIndex, endIndex);
 });
-
-const itemsPerPage = 6;
-const currentPage = ref(1);
-
-// Function to handle pagination
-const goToPage = (page) => {
-  let totalPages;
-  department.value !== ""
-    ? (totalPages = Math.ceil(filteredThemes.value.length / itemsPerPage))
-    : (totalPages = Math.ceil(themes.value.length / itemsPerPage));
-  console.log(totalPages);
-  if (page >= 1 && page <= totalPages) {
-    currentPage.value = page;
-  }
-};
 </script>
 
 <style></style>
