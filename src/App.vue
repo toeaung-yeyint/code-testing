@@ -12,7 +12,7 @@
     <form
       @submit.prevent
       @input="$emit('inputProvided', (payload = searchShape))"
-      class="flex items-center border-2 focus-within:border-sky-500"
+      class="flex items-center border-2 focus-within:border-sky-500 focus-within:text-sky-500"
     >
       <input
         class="px-2 py-1 flex-grow focus:outline-none"
@@ -20,16 +20,14 @@
         placeholder="Search themes by entering keywords"
         v-model="searchTheme"
       />
-      <i class="fa-solid fa-magnifying-glass text-gray-400 px-2"></i>
+      <i class="fa-solid fa-magnifying-glass px-2"></i>
     </form>
     <form class="flex items-center justify-end mt-4 mb-16">
-      <label for="department" class="font-semibold"
-        >Filter by a department:</label
-      >
+      <label for="department" class="font-semibold">Department:</label>
       <select
         v-model="department"
         id="department"
-        class="ml-4 border-2 focus:outline-none focus:border-sky-500 font-['Roboto']"
+        class="ml-2 border-2 focus:outline-none focus:border-sky-500 font-['Roboto']"
       >
         <option value="">All Departments</option>
         <option value="Chemical Engineering">
