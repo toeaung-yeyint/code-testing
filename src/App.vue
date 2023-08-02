@@ -9,44 +9,44 @@
         under way.
       </p>
     </div>
-    <form
-      @submit.prevent
-      @input="$emit('inputProvided', (payload = searchShape))"
-      class="flex items-center border-2 focus-within:border-sky-500 focus-within:text-sky-500"
-    >
-      <input
-        class="px-2 py-1 flex-grow focus:outline-none"
-        type="text"
-        placeholder="Search themes by entering keywords"
-        v-model="searchTheme"
-      />
-      <i class="fa-solid fa-magnifying-glass px-2"></i>
-    </form>
-    <form class="flex items-center justify-end mt-4 mb-16">
-      <label for="department" class="font-semibold">Department:</label>
-      <select
-        v-model="department"
-        id="department"
-        class="ml-2 border-2 focus:outline-none focus:border-sky-500 font-['Roboto']"
+    <form @submit.prevent>
+      <div
+        class="flex items-center border-2 focus-within:border-sky-500 focus-within:text-sky-500"
       >
-        <option value="">All Departments</option>
-        <option value="Chemical Engineering">
-          Chemical and Biological Engineering
-        </option>
-        <option value="Civil Engineering">Civil Engineering</option>
-        <option value="Electrical and Computer Systems Engineering">
-          Electrical and Computer Systems Engineering
-        </option>
-        <option value="Materials Science and Engineering">
-          Materials Science and Engineering
-        </option>
-        <option value="Mechanical and Aerospace Engineering">
-          Mechanical and Aerospace Engineering
-        </option>
-        <option value="Interdisciplinary research">
-          Interdisciplinary research
-        </option>
-      </select>
+        <input
+          class="px-2 py-1 flex-grow focus:outline-none"
+          type="text"
+          placeholder="Search themes by entering keywords"
+          v-model="searchTheme"
+        />
+        <i class="fa-solid fa-magnifying-glass px-2"></i>
+      </div>
+      <div class="flex items-center justify-end mt-4 mb-16">
+        <label for="department" class="font-semibold">Department:</label>
+        <select
+          v-model="department"
+          id="department"
+          class="ml-2 border-2 focus:outline-none focus:border-sky-500 font-['Roboto']"
+        >
+          <option value="">All Departments</option>
+          <option value="Chemical Engineering">
+            Chemical and Biological Engineering
+          </option>
+          <option value="Civil Engineering">Civil Engineering</option>
+          <option value="Electrical and Computer Systems Engineering">
+            Electrical and Computer Systems Engineering
+          </option>
+          <option value="Materials Science and Engineering">
+            Materials Science and Engineering
+          </option>
+          <option value="Mechanical and Aerospace Engineering">
+            Mechanical and Aerospace Engineering
+          </option>
+          <option value="Interdisciplinary research">
+            Interdisciplinary research
+          </option>
+        </select>
+      </div>
     </form>
     <div class="grid grid-cols-3 gap-10">
       <a
@@ -125,7 +125,7 @@ const themes = ref([
   {
     name: "Advanced Manufacturing",
     department: "Mechanical and Aerospace Engineering",
-    image: "/code-testing/assets/additive-manufacturing.jpg",
+    image: "/code-testing/assets/advanced-manufacturing.jpg",
   },
   {
     name: "Micro/Nano Engineering",
