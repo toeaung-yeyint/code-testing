@@ -10,9 +10,7 @@
       </p>
     </div>
     <form @submit.prevent>
-      <div
-        class="flex items-center border-2 focus-within:border-sky-500 focus-within:text-sky-500"
-      >
+      <div class="flex items-center border-2 focus-within:border-sky-500">
         <input
           class="px-2 py-1 flex-grow focus:outline-none"
           type="text"
