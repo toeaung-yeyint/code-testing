@@ -9,44 +9,35 @@
         under way.
       </p>
     </div>
-    <form @submit.prevent>
-      <div class="flex items-center border-2 focus-within:border-sky-500">
+    <form @submit.prevent class="flex gap-4 mb-16 flex-wrap justify-end">
+      <div
+        class="focus-within:border-sky-500 flex w-full items-center border-2 p-2"
+      >
         <input
-          class="px-2 py-1 flex-grow focus:outline-none"
+          class="focus:outline-none flex-grow"
           type="text"
           placeholder="Search themes by entering keywords"
           v-model="searchTheme"
         />
         <i class="fa-solid fa-magnifying-glass px-2"></i>
       </div>
-      <div class="flex items-center justify-end mt-4 mb-16">
-        <label for="department" class="font-semibold">Department:</label>
+      <div class="flex items-center justify-end">
         <select
           v-model="department"
           id="department"
-          class="ml-2 border-2 focus:outline-none focus:border-sky-500 font-['Roboto']"
+          class="bg-sky-500 border-2 text-sm w-full sm:w-fit border-sky-500 text-white p-1 focus:outline-none focus:border-sky-500 font-['Roboto']"
         >
-          <option value="">All Departments</option>
-          <option value="Chemical Engineering">
-            Chemical and Biological Engineering
-          </option>
-          <option value="Civil Engineering">Civil Engineering</option>
-          <option value="Electrical and Computer Systems Engineering">
-            Electrical and Computer Systems Engineering
-          </option>
-          <option value="Materials Science and Engineering">
-            Materials Science and Engineering
-          </option>
-          <option value="Mechanical and Aerospace Engineering">
-            Mechanical and Aerospace Engineering
-          </option>
-          <option value="Interdisciplinary research">
-            Interdisciplinary research
-          </option>
+          <option>Filter by Department</option>
+          <option>Chemical and Biological Engineering</option>
+          <option>Civil Engineering</option>
+          <option>Electrical and Computer Systems Engineering</option>
+          <option>Materials Science and Engineering</option>
+          <option>Mechanical and Aerospace Engineering</option>
+          <option>Interdisciplinary research</option>
         </select>
       </div>
     </form>
-    <div class="grid grid-cols-3 gap-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
       <a
         href="https://www.google.com/"
         class="flex flex-col shadow-lg group"
@@ -92,32 +83,32 @@ const themes = ref([
   },
   {
     name: "Biotechnology",
-    department: "Chemical Engineering",
+    department: "Chemical and Biological Engineering",
     image: "/code-testing/assets/biotechnology.jpg",
   },
   {
     name: "Food",
-    department: "Chemical Engineering",
+    department: "Chemical and Biological Engineering",
     image: "/code-testing/assets/food.jpg",
   },
   {
     name: "Modelling",
-    department: "Chemical Engineering",
+    department: "Chemical and Biological Engineering",
     image: "/code-testing/assets/modelling.jpg",
   },
   {
     name: "Nanomaterials",
-    department: "Chemical Engineering",
+    department: "Chemical and Biological Engineering",
     image: "/code-testing/assets/nanomaterials.jpg",
   },
   {
     name: "Fuels and Energy",
-    department: "Chemical Engineering",
+    department: "Chemical and Biological Engineering",
     image: "/code-testing/assets/fuels-and-energy.jpg",
   },
   {
     name: "Membranes",
-    department: "Chemical Engineering",
+    department: "Chemical and Biological Engineering",
     image: "/code-testing/assets/membranes.jpg",
   },
   {
@@ -236,7 +227,7 @@ const themes = ref([
 
 const searchTheme = ref("");
 
-const department = ref("");
+const department = ref("Filter by Department");
 
 const filteredThemes = computed(() => {
   return themes.value
@@ -245,10 +236,14 @@ const filteredThemes = computed(() => {
         theme.name
           .toLowerCase()
           .includes(searchTheme.value.trim().toLowerCase()) &&
-        theme.department.toLowerCase().includes(department.value.toLowerCase())
+        (department.value === "Filter by Department" ||
+          theme.department
+            .toLowerCase()
+            .includes(department.value.toLowerCase()))
     )
     .sort((a, b) => a.name.localeCompare(b.name));
 });
 </script>
 
-<style></style>
+<style scoped>
+</style>
