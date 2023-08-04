@@ -7,7 +7,10 @@ import HelloWorld from "./components/HelloWorld.vue";
     :person="{
       name: 'Toe Aung Ye Yint',
       age: 27,
-      skills: ['JavaScript', 'TypeScript'],
+      skills: {
+        frontend: ['JavaScript', 'TypeScript'],
+        backend: ['Node', 'Python'],
+      },
     }"
   />
 </template>

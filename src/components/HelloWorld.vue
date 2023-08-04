@@ -4,7 +4,10 @@ import { ref } from "vue";
 type Person = {
   name: string;
   age: number;
-  skills: Array<string | number>;
+  skills: {
+    frontend: Array<String>;
+    backend: Array<String>;
+  };
 };
 
 const { person } = defineProps<{ person: Person }>();
@@ -20,8 +23,13 @@ function increaseAge() {
   <h2>age: {{ reactivePerson.age }}</h2>
   <button @click="increaseAge">increase age</button>
   <ul>
-    <li v-for="(skill, index) in reactivePerson.skills" :key="index">
-      {{ skill }}
+    <li v-for="(skill, type) in reactivePerson.skills" :key="type">
+      {{ type }}
+      <ul>
+        <li v-for="(singleSkill, index) in skill" :key="index">
+          {{ singleSkill }}
+        </li>
+      </ul>
     </li>
   </ul>
 </template>
