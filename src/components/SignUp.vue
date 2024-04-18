@@ -30,10 +30,6 @@ const ContactStore = useContactStore();
 				v-model="ContactStore.regPassword"
 			/>
 		</div>
-		<AppButton label="register" />
+		<AppButton label="register" buttonStyle="primary" />
 	</form>
-	<AppButton
-		label="sign in"
-		@click="ContactStore.isSignInForm = !ContactStore.isSignInForm"
-	/>
 </template>

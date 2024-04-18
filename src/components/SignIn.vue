@@ -25,10 +25,6 @@ const ContactStore = useContactStore();
 				v-model="ContactStore.password"
 			/>
 		</div>
-		<AppButton label="sign in" />
+		<AppButton label="sign in" buttonStyle="primary" />
 	</form>
-	<AppButton
-		label="sign up"
-		@click="ContactStore.isSignInForm = !ContactStore.isSignInForm"
-	/>
 </template>

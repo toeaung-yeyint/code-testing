@@ -28,6 +28,6 @@ const ContactStore = useContactStore();
 				v-model="ContactStore.phNumber"
 			/>
 		</div>
-		<AppButton label="+ add" />
+		<AppButton label="+ add" buttonStyle="primary" />
 	</form>
 </template>

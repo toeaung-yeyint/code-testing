@@ -16,10 +16,10 @@ import {
 	orderBy,
 	onSnapshot,
 } from "firebase/firestore";
+import router from "../router/index";
 
 export const useContactStore = defineStore("ContactStore", () => {
 	const loginUser = ref(null);
-	const isSignInForm = ref(true);
 	const contactList = ref([]);
 	const name = ref("");
 	const phNumber = ref("");
@@ -39,6 +39,7 @@ export const useContactStore = defineStore("ContactStore", () => {
 			);
 			regEmail.value = "";
 			regPassword.value = "";
+			router.push("/");
 		} catch (error) {
 			console.log(error.message);
 			regEmail.value = "";
@@ -52,6 +53,7 @@ export const useContactStore = defineStore("ContactStore", () => {
 			await signInWithEmailAndPassword(auth, email.value, password.value);
 			email.value = "";
 			password.value = "";
+			router.push("/");
 		} catch (error) {
 			console.log(error.message);
 			email.value = "";
@@ -107,7 +109,6 @@ export const useContactStore = defineStore("ContactStore", () => {
 
 	return {
 		loginUser,
-		isSignInForm,
 		email,
 		password,
 		regEmail,

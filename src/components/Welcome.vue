@@ -19,6 +19,10 @@ const handleSignOut = async () => {
 <template>
 	<div class="flex items-center gap-3">
 		<p>Welcome {{ email }}!</p>
-		<AppButton @click="handleSignOut" label="sign out" />
+		<AppButton
+			@click="handleSignOut"
+			label="sign out"
+			buttonStyle="alternative"
+		/>
 	</div>
 </template>

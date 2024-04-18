@@ -1,0 +1,1 @@
+import{g as o,c as t,o as n,b as e}from"./index-TKH1Lkem.js";const c={},s=e("h1",null,"Not Found",-1),_=e("p",null,"Oops. we couldn't find that page.",-1),a=[s,_];function d(r,l){return n(),t("div",null,a)}const u=o(c,[["render",d]]);export{u as default};

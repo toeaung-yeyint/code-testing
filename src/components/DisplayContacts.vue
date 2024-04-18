@@ -16,7 +16,11 @@ ContactStore.fetchContactList();
 			:key="contact.id"
 		>
 			{{ contact.data().name }} {{ contact.data().phNumber }}
-			<AppButton @click="ContactStore.deleteContacts(contact.id)" label="x" />
+			<AppButton
+				@click="ContactStore.deleteContacts(contact.id)"
+				label="x"
+				buttonStyle="alternative"
+			/>
 		</li>
 	</ul>
 </template>
